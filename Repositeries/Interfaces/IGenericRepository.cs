@@ -1,10 +1,4 @@
-﻿using EF_Practise.DTOs.Brand;
-using EF_Practise.Entities.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EF_Practise.Entities.Common;
 
 namespace EF_Practise.Repositeries.Interfaces
 {

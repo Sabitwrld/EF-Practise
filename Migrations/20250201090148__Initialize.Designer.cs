@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_Practise.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250131210817__Initialize")]
+    [Migration("20250201090148__Initialize")]
     partial class _Initialize
     {
         /// <inheritdoc />
@@ -34,7 +34,7 @@ namespace EF_Practise.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -73,21 +73,16 @@ namespace EF_Practise.Migrations
 
             modelBuilder.Entity("EF_Practise.Entities.CarColor", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<int>("CarId")
                         .HasColumnType("int");
 
                     b.Property<int>("ColorId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
 
-                    b.HasIndex("CarId");
+                    b.HasKey("CarId", "ColorId");
 
                     b.HasIndex("ColorId");
 
@@ -103,7 +98,8 @@ namespace EF_Practise.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -122,7 +118,8 @@ namespace EF_Practise.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

@@ -1,5 +1,4 @@
-﻿using EF_Practise.DTOs.Brand;
-using EF_Practise.Entities;
+﻿using EF_Practise.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +9,11 @@ namespace EF_Practise.Services.Interfaces
 {
     public interface IBrandService
     {
-        void Create(BrandCreateDto brand);
+        void Create(Brand brand);
         void Update(int id,Brand brand);
-        void Delete(int? id);
+        void Delete(int id);
         Brand GetById(int id);
-        List<BrandGetDto> GetAll();
+        List<Brand> GetAll();
 
     }
 }
